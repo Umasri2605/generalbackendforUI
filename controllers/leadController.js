@@ -1,6 +1,5 @@
 const Lead = require("../models/leadModel");
 
-// @desc Get all leads
 exports.getLeads = async (req, res) => {
   try {
     const leads = await Lead.find();
@@ -10,7 +9,6 @@ exports.getLeads = async (req, res) => {
   }
 };
 
-// @desc Get single lead by ID
 exports.getLeadById = async (req, res) => {
   try {
     const lead = await Lead.findById(req.params.id);
@@ -21,7 +19,6 @@ exports.getLeadById = async (req, res) => {
   }
 };
 
-// @desc Create a new lead
 exports.createLead = async (req, res) => {
   try {
     const newLead = new Lead(req.body);
@@ -32,7 +29,6 @@ exports.createLead = async (req, res) => {
   }
 };
 
-// @desc Update lead by ID
 exports.updateLead = async (req, res) => {
   try {
     const updatedLead = await Lead.findByIdAndUpdate(req.params.id, req.body, {
@@ -46,7 +42,6 @@ exports.updateLead = async (req, res) => {
   }
 };
 
-// @desc Delete lead by ID
 exports.deleteLead = async (req, res) => {
   try {
     const deletedLead = await Lead.findByIdAndDelete(req.params.id);
